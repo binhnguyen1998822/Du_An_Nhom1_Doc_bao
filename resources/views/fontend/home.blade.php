@@ -18,16 +18,16 @@
                                 <div class="col-md-8">
 
                                     <h3 class="card-title">
-                                        <a href="{{ asset('blog') }}/{{ $v->slug }}">{{ $v->title }}</a>
+                                        <a href="{{ asset('blog') }}/{{ $v->post_slug }}">{{ $v->post_title }}</a>
                                     </h3>
                                     <p class="card-description">
-                                        {{ $v->desperation  }}
-                                        <a href="{{ asset('blog') }}/{{ $v->slug }}"> Đọc thêm </a>
+                                        {{ $v->post_title  }}
+                                        <a href="{{ asset('blog') }}/{{ $v->post_slug }}"> Đọc thêm </a>
                                     </p>
                                     <p class="author">
                                         by
                                         <a href="#pablo">
-                                            <b>Tô Nguyên</b>
+                                            <b>{{$v->auth->name}}</b>
                                         </a>
                                     </p>
                                 </div>
