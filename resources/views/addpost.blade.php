@@ -30,6 +30,19 @@
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <div class="form-group">
+                                                <label class="form-control-label" for="input-last-name">Danh mục</label>
+                                                <select class="form-control form-control-alternative" name="category_ID">
+                                                    <option value="">...</option>
+                                                    @foreach(Call::category() as $cat)
+                                                        <option value="{{$cat->id}}">{{$cat->category_name}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <div class="form-group">
                                                 <label class="form-control-label" for="input-last-name">Ảnh</label>
                                                 <input type="text" id="post_image" name="post_image" class="form-control form-control-alternative" placeholder="Slug" autocomplete="off" value="" required>
                                             </div>

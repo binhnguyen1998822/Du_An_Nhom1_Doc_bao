@@ -6,10 +6,10 @@
             <div class="col">
                 <div class="card shadow">
                     <div class="card-header border-0">
-                        <h3 class="mb-0">Danh sách bài viết</h3>
-                        <a href="{{ url('addpost') }}" class="btn btn-icon btn-primary float-right">
+                        <h3 class="mb-0">Danh sách danh mục</h3>
+                        <a href="{{ url('addcat') }}" class="btn btn-icon btn-primary float-right">
                             <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
-                            <span class="btn-inner--text">Thêm bài viết</span>
+                            <span class="btn-inner--text">Thêm danh mục</span>
                         </a>
                     </div>
                     <div class="table-responsive">
@@ -17,23 +17,15 @@
                             <thead class="thead-light">
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">Tên bài viết</th>
-                                <th scope="col">Danh mục</th>
-                                <th scope="col">Lượt xem</th>
-                                <th scope="col">Người viết</th>
-                                <th scope="col">Thời gian</th>
+                                <th scope="col">Tên danh mục</th>
                                 <th scope="col">Sửa</th>
                             </tr>
                             </thead>
                             <tbody>
-                                @foreach($post as $v)
+                                @foreach($cat as $v)
                                 <tr>
                                     <td scope="row">{{$v->id}}</td>
-                                    <td scope="row">{{$v->post_title}}</td>
-                                    <td scope="row">{{$v->category_ID}}</td>
-                                    <td scope="row">{{$v->author_ID}}</td>
-                                    <td scope="row">{{$v->auth->name}}</td>
-                                    <td scope="row">{{$v->created_at}}</td>
+                                    <td scope="row">{{$v->category_name}}</td>
                                     <td scope="row">Edit</td>
                                 </tr>
                                 @endforeach
