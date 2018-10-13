@@ -18,16 +18,20 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $blog = Post::get();
-        return view('fontend.home',compact('blog'));
+        $blog = Post::orderBy('id', 'desc')->get();
+        return view('fontend.home', compact('blog'));
     }
 
     public function view($slug)
     {
-        $blog = Post::where('post_slug',$slug)->first();
-        $cmt = Comment::where('post_ID',$blog->id)->get();
-        $cmtcont = Comment::where('post_ID',$blog->id)->count();
-        return view('fontend.details',compact('blog','cmt','cmtcont'));
+        $blog = Post::where('post_slug', $slug)->first();
+        if ($blog == null) {
+            return back();
+        } else {
+            $cmt = Comment::where('post_ID', $blog->id)->get();
+            $cmtcont = Comment::where('post_ID', $blog->id)->count();
+            return view('fontend.details', compact('blog', 'cmt', 'cmtcont'));
+        }
     }
 
 
@@ -36,7 +40,7 @@ class HomeController extends Controller
         $cmt = new Comment();
         $cmt->post_ID = $request->post_ID;
         $cmt->comment_author_IP = $request->ip();
-        $cmt->comment_content = $request->comment_content ;
+        $cmt->comment_content = $request->comment_content;
         $cmt->user_id = Auth::id();
         $cmt->save();
 

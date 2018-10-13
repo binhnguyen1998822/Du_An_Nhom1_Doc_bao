@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return redirect('home');
+Route::get('home', function () {
+    return redirect('/');
 });
 
 Auth::routes();
@@ -20,6 +20,7 @@ Route::prefix('admin')->group(function () {
     Route::namespace('Admin')->group(function () {
         //home
         Route::get('home', 'HomeController@index');
+        Route::get('/', 'HomeController@index');
         //post
         Route::get('addpost', 'PostController@addget');
         Route::post('addpost', 'PostController@addpost');

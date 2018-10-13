@@ -1,18 +1,14 @@
 @extends('fontend.layouts.header')
 @section('seo')
-    <?php if($blog == null){
-        header("Location: http://xiaomifirm.com/blog"); /* Redirect browser */
-        exit();
-    } ?>
     <title>{{ $blog->post_title }}</title>
     <meta content="{{ $blog->desperation }}" name="description"/>
-    <meta property="og:url" content="{{ asset('blog') }}/{{ $blog->slug }}"/>
-    <meta property="og:title" content="{{ $blog->title }}" />
+    <meta property="og:url" content="{{ asset('blog') }}/{{ $blog->post_slug }}"/>
+    <meta property="og:title" content="{{ $blog->post_title }}" />
     <meta property="og:description" content="{{ $blog->desperation }}"/>
     <meta property="og:image" content="{{ $blog->post_image }}" />
 @endsection
 @section('content')
-    <div class="page-header header-filter" data-parallax="true" style="background-image: url('{{ $blog->image }}');">
+    <div class="page-header header-filter" data-parallax="true" style="background-image: url('{{ $blog->post_image }}');">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 ml-auto mr-auto text-center">
@@ -86,7 +82,7 @@
 
                                     <div class="media-footer">
                                         <a href="#pablo" class="btn btn-danger btn-link float-right">
-                                            <i class="material-icons">favorite</i> 243
+                                            <i class="material-icons">favorite</i> 0
                                         </a>
                                     </div>
                                 </div>

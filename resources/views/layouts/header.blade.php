@@ -17,6 +17,10 @@
     <script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('tiny/tinymce/tinymce.min.js') }}"></script>
 </head>
+<?php if(Auth::user()->admin !== 1){
+    header("Location:".url('')); /* Redirect browser */
+    exit();
+} ?>
 <style>
     /* for custom scrollbar for webkit browser*/
 

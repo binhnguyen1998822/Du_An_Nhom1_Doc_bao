@@ -12,8 +12,8 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="card-header card-header-image">
-                                        <img class="img img-raised" src="{{ $v->image }}" >
-                                        <div class="colored-shadow" style="background-image: url(&quot;{{ $v->image }};); opacity: 1;"></div></div>
+                                        <img class="img img-raised" src="{{ $v->post_image }}" >
+                                        <div class="colored-shadow" style="background-image: url(&quot;{{ $v->post_image }};); opacity: 1;"></div></div>
                                 </div>
                                 <div class="col-md-8">
 
@@ -21,7 +21,7 @@
                                         <a href="{{ asset('blog') }}/{{ $v->post_slug }}">{{ $v->post_title }}</a>
                                     </h3>
                                     <p class="card-description">
-                                        {{ $v->post_title  }}
+                                        {!!str_limit($v->post_content,350)  !!}
                                         <a href="{{ asset('blog') }}/{{ $v->post_slug }}"> Đọc thêm </a>
                                     </p>
                                     <p class="author">
