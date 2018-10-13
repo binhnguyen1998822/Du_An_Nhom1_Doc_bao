@@ -94,18 +94,13 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('listblog') }}">
+                    <a class="nav-link" href="{{ url('listpost') }}">
                         <i class="ni ni-bullet-list-67 text-primary"></i> Bài viết
-                    </a>
-                </li></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('addblog') }}">
-                        <i class="ni ni-fat-add text-primary"></i> Thêm bài viết
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('addcat') }}">
-                        <i class="ni ni-fat-add text-primary"></i> Thêm danh mục
+                    <a class="nav-link" href="{{ url('category') }}">
+                        <i class="ni ni-bullet-list-67 text-primary"></i> Danh mục
                     </a>
                 </li>
             </ul>
