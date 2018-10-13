@@ -10,4 +10,8 @@ class Post extends Model
     {
         return $this->belongsTo('App\User','author_ID','id');
     }
+    public function cat()
+    {
+        return $this->belongsTo('App\Category','category_ID','id');
+    }
 }

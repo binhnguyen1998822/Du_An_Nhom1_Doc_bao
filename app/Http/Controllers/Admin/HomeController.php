@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Category;
+use App\Comment;
+use App\Post;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $countpost = Post::count();
+        $countcat = Category::count();
+        $countcmt = Comment::count();
+
+        return view('home', compact('countpost', 'countcat', 'countcmt'));
     }
 }

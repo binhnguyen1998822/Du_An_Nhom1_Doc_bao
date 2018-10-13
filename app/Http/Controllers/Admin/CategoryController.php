@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Admin;
+use App\Http\Controllers\Controller;
 use App\Category;
 use App\Post;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
 {
@@ -57,7 +56,7 @@ class CategoryController extends Controller
         $cat->category_slug = $request->category_slug;
         $cat->save();
 
-        return redirect('category')->with('msg', 'Đã thêm danh mục');
+        return redirect('admin/category')->with('msg', 'Đã thêm danh mục');
     }
 
 

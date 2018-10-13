@@ -7,7 +7,7 @@
                 <div class="card shadow">
                     <div class="card-header border-0">
                         <h3 class="mb-0">Danh sách danh mục</h3>
-                        <a href="{{ url('addcat') }}" class="btn btn-icon btn-primary float-right">
+                        <a href="{{ url('admin/addcat') }}" class="btn btn-icon btn-primary float-right">
                             <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
                             <span class="btn-inner--text">Thêm danh mục</span>
                         </a>

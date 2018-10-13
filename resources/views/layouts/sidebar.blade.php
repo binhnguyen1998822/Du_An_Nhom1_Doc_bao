@@ -6,7 +6,7 @@
         </button>
         <!-- Brand -->
         <a class="navbar-brand pt-0" href="{{ asset('') }}">
-            <img src="{{ asset('assets/img/brand/logo.webp') }}" class="navbar-brand-img" alt="...">
+            <img src="{{ asset('assets/img/brand/blue.png') }}" class="navbar-brand-img" alt="...">
         </a>
         <!-- User -->
         <ul class="nav align-items-center d-md-none">
@@ -64,7 +64,7 @@
                 <div class="row">
                     <div class="col-6 collapse-brand">
                         <a href="{{ asset('') }}">
-                            <img src="{{ asset('assets/img/brand/logo.webp') }}">
+                            <img src="{{ asset('assets/img/brand/blue.png') }}">
                         </a>
                     </div>
                     <div class="col-6 collapse-close">
@@ -89,17 +89,17 @@
             <!-- Navigation -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('home') }}">
+                    <a class="nav-link" href="{{ url('admin/home') }}">
                         <i class="ni ni-tv-2 text-primary"></i> Bảng điều khiển
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('listpost') }}">
+                    <a class="nav-link" href="{{ url('admin/listpost') }}">
                         <i class="ni ni-bullet-list-67 text-primary"></i> Bài viết
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('category') }}">
+                    <a class="nav-link" href="{{ url('admin/category') }}">
                         <i class="ni ni-bullet-list-67 text-primary"></i> Danh mục
                     </a>
                 </li>

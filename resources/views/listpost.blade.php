@@ -7,7 +7,7 @@
                 <div class="card shadow">
                     <div class="card-header border-0">
                         <h3 class="mb-0">Danh sách bài viết</h3>
-                        <a href="{{ url('addpost') }}" class="btn btn-icon btn-primary float-right">
+                        <a href="{{ url('admin/addpost') }}" class="btn btn-icon btn-primary float-right">
                             <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
                             <span class="btn-inner--text">Thêm bài viết</span>
                         </a>
@@ -30,7 +30,7 @@
                                 <tr>
                                     <td scope="row">{{$v->id}}</td>
                                     <td scope="row">{{$v->post_title}}</td>
-                                    <td scope="row">{{$v->category_ID}}</td>
+                                    <td scope="row">{{isset($v->cat) ? $v->cat->category_name : 'Không xác định' }}</td>
                                     <td scope="row">{{$v->author_ID}}</td>
                                     <td scope="row">{{$v->auth->name}}</td>
                                     <td scope="row">{{$v->created_at}}</td>

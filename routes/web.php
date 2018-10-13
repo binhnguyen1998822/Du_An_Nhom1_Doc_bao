@@ -16,13 +16,23 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-//home
-Route::get('home', 'HomeController@index');
-//post
-Route::get('addpost', 'PostController@addget');
-Route::post('addpost', 'PostController@addpost');
-Route::get('listpost', 'PostController@list');
-//cat
-Route::get('category', 'CategoryController@list');
-Route::get('addcat', 'CategoryController@addget');
-Route::post('addcat', 'CategoryController@addpost');
+Route::prefix('admin')->group(function () {
+    Route::namespace('Admin')->group(function () {
+        //home
+        Route::get('home', 'HomeController@index');
+        //post
+        Route::get('addpost', 'PostController@addget');
+        Route::post('addpost', 'PostController@addpost');
+        Route::get('listpost', 'PostController@list');
+        //cat
+        Route::get('category', 'CategoryController@list');
+        Route::get('addcat', 'CategoryController@addget');
+        Route::post('addcat', 'CategoryController@addpost');
+
+         });
+});
+
+Route::namespace('View')->group(function () {
+    //home
+    Route::get('/', 'HomeController@index');
+});

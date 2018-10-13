@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Admin;
+use App\Http\Controllers\Controller;
 use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -69,7 +69,7 @@ class PostController extends Controller
         $post->post_slug = $request->post_slug;
         $post->save();
 
-        return redirect('listpost')->with('msg', 'Đã thêm bài viết');
+        return redirect('admin/listpost')->with('msg', 'Đã thêm bài viết');
     }
 
 
