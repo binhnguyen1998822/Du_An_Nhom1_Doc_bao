@@ -4,6 +4,7 @@ namespace App\Http\Controllers\View;
 
 use App\Category;
 use App\Http\Controllers\Controller;
+use App\Post;
 
 class JsonController extends Controller
 {
@@ -17,6 +18,12 @@ class JsonController extends Controller
     {
         $cat = Category::with('post')->get();
         return response()->json(['data' => $cat]);
+    }
+
+ public function json()
+    {
+        $post = Post::get();
+        return response()->json(['data' => $post]);
     }
 
 

@@ -42,6 +42,7 @@ Route::namespace('View')->group(function () {
 });
 Route::prefix('api')->group(function () {
     Route::namespace('View')->group(function () {
-        Route::get('json', 'JsonController@index');
+        Route::get('json2', 'JsonController@index');
+        Route::get('json', 'JsonController@json');
     });
 });
