@@ -25,6 +25,7 @@ Route::prefix('admin')->group(function () {
         Route::get('addpost', 'PostController@addget');
         Route::post('addpost', 'PostController@addpost');
         Route::get('listpost', 'PostController@list');
+        Route::get('testNoty', 'PostController@testNoty');
         //cat
         Route::get('category', 'CategoryController@list');
         Route::get('addcat', 'CategoryController@addget');

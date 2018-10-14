@@ -106,5 +106,32 @@ class PostController extends Controller
         return $response;
     }
 
+    public function testNoty() {
+
+        $ch = curl_init("https://fcm.googleapis.com/fcm/send");
+
+        $fields = array(
+            "to" => "/topics/NTB",
+            'data' => array(
+                "post_title" => "Test Thông báo"
+            )
+        );
+        $headers = array();
+
+        $headers[] = 'Content-Type: application/json';
+        $headers[] = 'Authorization: key= AAAAKlbvVf4:APA91bHtKzyO-5OX-pKdtyjpXVjenIt10LQaSv2gfuBh6aK5FAcIsYy8mCcXEQ1sBAh0pOQN-0EGJ10SVk9J1VmUM1e3YIf9UKylwwjC8GScQekY5Qr_eq5QQk3iTNPi1Q2NkZhNouOS';
+
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fields));
+        $result = curl_exec($ch);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        return $response;
+    }
+
 
 }
