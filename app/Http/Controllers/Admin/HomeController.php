@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Category;
 use App\Comment;
 use App\Post;
+use App\Task;
 
 class HomeController extends Controller
 {
@@ -29,7 +30,8 @@ class HomeController extends Controller
         $countpost = Post::count();
         $countcat = Category::count();
         $countcmt = Comment::count();
+        $countview = Task::where('view',1)->count();
 
-        return view('home', compact('countpost', 'countcat', 'countcmt'));
+        return view('home', compact('countpost', 'countcat', 'countcmt','countview'));
     }
 }
