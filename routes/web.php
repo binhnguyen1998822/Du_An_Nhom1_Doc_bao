@@ -29,6 +29,7 @@ Route::prefix('admin')->group(function () {
         Route::get('category', 'CategoryController@list');
         Route::get('addcat', 'CategoryController@addget');
         Route::post('addcat', 'CategoryController@addpost');
+        Route::get('sentNoti', 'PostController@sentNoti');
 
          });
 });
