@@ -44,6 +44,11 @@
                         </a>
                     </li>
                 @endforeach
+                    <li class="dropdown nav-item">
+                        <a href="{{url('info')}}" class=" nav-link">
+                            <i class="material-icons">view_day</i>Giới thiệu
+                        </a>
+                    </li>
                 @if(Auth::id() == null)
                     <li class="button-container nav-item iframe-extern">
                         <button class="btn btn-round btn-primary" data-toggle="modal" data-target="#loginModal">

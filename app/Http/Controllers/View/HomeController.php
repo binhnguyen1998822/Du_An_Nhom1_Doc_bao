@@ -46,6 +46,10 @@ class HomeController extends Controller
 
         return back();
     }
+    public function info()
+    {
+        return view('fontend.info');
+    }
 
 
 }

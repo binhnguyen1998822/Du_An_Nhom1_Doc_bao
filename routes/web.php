@@ -36,6 +36,7 @@ Route::prefix('admin')->group(function () {
 Route::namespace('View')->group(function () {
     //home
     Route::get('/', 'HomeController@index');
+    Route::get('info', 'HomeController@info');
     Route::get('blog/{slug}', 'HomeController@view');
     Route::post('comment', 'HomeController@comment');
 });
