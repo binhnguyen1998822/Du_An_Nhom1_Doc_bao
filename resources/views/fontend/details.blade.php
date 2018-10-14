@@ -109,10 +109,10 @@
                                     </div>
                             </form>
                         </div> <!-- end media-post -->
-                        @else
-                            <div class="media-footer">
-                                <input type="submit" value="Đăng nhập" class="btn btn-primary btn-round btn-wd">
-                            </div>
+                        @else<div class="text-center">
+                            <button class="btn btn-round" data-toggle="modal" data-target="#loginModal">
+                                Đăng nhập
+                            </button></div>
                         @endif
                     </div>
                 </div>
