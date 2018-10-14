@@ -40,3 +40,8 @@ Route::namespace('View')->group(function () {
     Route::get('blog/{slug}', 'HomeController@view');
     Route::post('comment', 'HomeController@comment');
 });
+Route::prefix('api')->group(function () {
+    Route::namespace('View')->group(function () {
+        Route::get('json', 'JsonController@index');
+    });
+});
