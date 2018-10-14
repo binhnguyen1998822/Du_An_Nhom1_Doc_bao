@@ -20,6 +20,7 @@
                                 <th scope="col">Tên bài viết</th>
                                 <th scope="col">Danh mục</th>
                                 <th scope="col">Lượt xem</th>
+                                <th scope="col">Bình luận</th>
                                 <th scope="col">Người viết</th>
                                 <th scope="col">Thời gian</th>
                                 <th scope="col">Sửa</th>
@@ -31,7 +32,8 @@
                                     <td scope="row">{{$v->id}}</td>
                                     <td scope="row">{{$v->post_title}}</td>
                                     <td scope="row">{{isset($v->cat) ? $v->cat->category_name : 'Không xác định' }}</td>
-                                    <td scope="row">{{$v->author_ID}}</td>
+                                    <td scope="row">{{$v->countview->count()}}</td>
+                                    <td scope="row">{{$v->countcmt->count()}}</td>
                                     <td scope="row">{{$v->auth->name}}</td>
                                     <td scope="row">{{$v->created_at}}</td>
                                     <td scope="row">Edit</td>

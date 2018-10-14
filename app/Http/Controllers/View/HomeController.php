@@ -5,6 +5,7 @@ namespace App\Http\Controllers\View;
 use App\Comment;
 use App\Http\Controllers\Controller;
 use App\Post;
+use App\Task;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -22,7 +23,7 @@ class HomeController extends Controller
         return view('fontend.home', compact('blog'));
     }
 
-    public function view($slug)
+    public function view($slug , Request $request)
     {
         $blog = Post::where('post_slug', $slug)->first();
         if ($blog == null) {
@@ -30,6 +31,15 @@ class HomeController extends Controller
         } else {
             $cmt = Comment::where('post_ID', $blog->id)->get();
             $cmtcont = Comment::where('post_ID', $blog->id)->count();
+
+            $task = new Task();
+            $task->id_user =Auth::id();
+            $task->view = 1;
+            $task->ip = $request->ip();
+            $task->id_post = $blog->id;
+            $task->save();
+
+
             return view('fontend.details', compact('blog', 'cmt', 'cmtcont'));
         }
     }

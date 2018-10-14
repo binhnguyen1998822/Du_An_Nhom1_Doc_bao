@@ -14,4 +14,17 @@ class Post extends Model
     {
         return $this->belongsTo('App\Category','category_ID','id');
     }
+
+
+    public function countview()
+    {
+        return $this->hasMany('App\Task','id_post','id');
+    }
+
+    public function countcmt()
+    {
+        return $this->hasMany('App\Comment','post_ID','id');
+    }
+
+
 }
