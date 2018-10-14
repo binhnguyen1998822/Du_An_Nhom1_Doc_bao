@@ -16,7 +16,7 @@ class JsonController extends Controller
     public function index()
     {
         $cat = Category::with('post')->get();
-        return $cat;
+        return response()->json(['data' => $cat]);
     }
 
 
